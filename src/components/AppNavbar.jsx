@@ -6,7 +6,7 @@ const AppNavbar = () => {
   return (
 
     <Navbar bg="primary" expand="lg" fixed="top" variant='dark' >
-      <Container fluid xl>
+      <Container fluid >
         <Navbar.Brand as={Link} to={'/'}>Ecomerce</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

@@ -37,7 +37,7 @@ const Home = () => {
                     <div className='prueba'>
                         <>
                             <Button variant="none" className="d-lg-none" onClick={handleShow}>
-                            <i class='bx bxs-filter-alt'> Filter</i>
+                            <i className='bx bxs-filter-alt'> Filter</i>
                             </Button>
 
 
@@ -47,7 +47,7 @@ const Home = () => {
 
                                 </Offcanvas.Header>
                                 <Offcanvas.Body>
-                                    <p className="mb-1">
+                                    <div className="mb-1">
                                        
                                             <Accordion className='category' defaultActiveKey="0">
                                                 <Accordion.Item eventKey="0">
@@ -56,7 +56,8 @@ const Home = () => {
                                                         <div>
                                                             {
 
-                                                                categories.map((categorie) => (
+                               
+categories.map((categorie) => (
 
                                                                     <ul className='list-category' key={categorie.id}
                                                                         onClick={() => dispatch(filterProductsCategoryThunk(categorie.id))}
@@ -70,7 +71,7 @@ const Home = () => {
                                                 </Accordion.Item>
                                             </Accordion>
                                         
-                                    </p>
+                                    </div>
                                 </Offcanvas.Body>
                             </Offcanvas>
                         </>
@@ -90,7 +91,7 @@ const Home = () => {
                                 aria-describedby="basic-addon2"
                             />
                             <Button bg='success' variant="primary" id="button-addon1">
-                            <i class='bx bx-search-alt-2 bx-md '></i>
+                            <i className='bx bx-search-alt-2 bx-md '></i>
                             </Button>
                         </InputGroup>
                     </div>
