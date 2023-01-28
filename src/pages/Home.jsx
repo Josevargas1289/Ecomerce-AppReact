@@ -31,7 +31,7 @@ const Home = () => {
             .then((res) => setCategories(res.data))
 
     }, []);
-    console.log(productsList);
+    // console.log(productsList);
 
     return (
 
