@@ -37,7 +37,7 @@ const Home = () => {
                     <div className='prueba'>
                         <>
                             <Button variant="none" className="d-lg-none" onClick={handleShow}>
-                            <i className='bx bxs-filter-alt'> Filter</i>
+                                <i className='bx bxs-filter-alt'> Filter</i>
                             </Button>
 
 
@@ -48,29 +48,29 @@ const Home = () => {
                                 </Offcanvas.Header>
                                 <Offcanvas.Body>
                                     <div className="mb-1">
-                                       
-                                            <Accordion className='category' defaultActiveKey="0">
-                                                <Accordion.Item eventKey="0">
-                                                    <Accordion.Header>Categories</Accordion.Header>
-                                                    <Accordion.Body>
-                                                        <div>
-                                                            {
 
-                               
-categories.map((categorie) => (
+                                        <Accordion className='category' defaultActiveKey="0">
+                                            <Accordion.Item eventKey="0">
+                                                <Accordion.Header>Categories</Accordion.Header>
+                                                <Accordion.Body>
+                                                    <div>
+                                                        {
 
-                                                                    <ul className='list-category' key={categorie.id}
-                                                                        onClick={() => dispatch(filterProductsCategoryThunk(categorie.id))}
-                                                                    >
-                                                                        <li>{categorie.name}</li>
-                                                                    </ul>
-                                                                ))
-                                                            }
-                                                        </div>
-                                                    </Accordion.Body>
-                                                </Accordion.Item>
-                                            </Accordion>
-                                        
+
+                                                            categories.map((categorie) => (
+
+                                                                <ul className='list-category' key={categorie.id}
+                                                                    onClick={() => dispatch(filterProductsCategoryThunk(categorie.id))}
+                                                                >
+                                                                    <li onClick={handleClose}>{categorie.name}</li>
+                                                                </ul>
+                                                            ))
+                                                        }
+                                                    </div>
+                                                </Accordion.Body>
+                                            </Accordion.Item>
+                                        </Accordion>
+
                                     </div>
                                 </Offcanvas.Body>
                             </Offcanvas>
@@ -91,7 +91,7 @@ categories.map((categorie) => (
                                 aria-describedby="basic-addon2"
                             />
                             <Button bg='success' variant="primary" id="button-addon1">
-                            <i className='bx bx-search-alt-2 bx-md '></i>
+                                <i className='bx bx-search-alt-2 bx-md '></i>
                             </Button>
                         </InputGroup>
                     </div>

@@ -78,11 +78,18 @@
 
 .list-category {
     cursor: pointer;
+    list-style: none;
+    border-radius: 10px;
 }
+.list-category:active {
+  background-color: #008cba;
+}
+
 
 span {
     color: rgb(189, 184, 184);
     font-weight: 900;
+    border-radius: 10px;
 }
 
 .home-card {
