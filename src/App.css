@@ -29,7 +29,7 @@
 
 .d-lg-none {
     position: fixed;
-    left: 17rem;
+    left: 16rem;
     top: .6rem;
     z-index: 10000;
     transition: all 300ms;
