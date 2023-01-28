@@ -28,7 +28,7 @@
 
 
 .d-lg-none {
-    position: absolute;
+    position: fixed;
     left: 14rem;
     top: .5rem;
     z-index: 10000;
