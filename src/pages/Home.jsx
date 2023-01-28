@@ -15,6 +15,14 @@ const Home = () => {
     const handleShow = () => setShow(true);
     const [newSearch, setnewSearch] = useState('')
 
+    const myStylesBtnAddCar = {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: '.8rem',
+        borderRadius: '50%'
+    }
+  
+   
 
 
     useEffect(() => {
@@ -37,8 +45,8 @@ const Home = () => {
                 <Col xs={1} md={2} lg={3} className="g-4">
                     <div className='prueba'>
                         <>
-                            <Button variant="none" className="d-lg-none" onClick={handleShow} style={{color: 'white'}}>
-                                <i className='bx bxs-filter-alt'> Filter</i>
+                            <Button variant="none" className='d-lg-none ' onClick={handleShow} style={{color: 'white'}}>
+                                <i className='bx bxs-filter-alt bx-sm'> </i>
                             </Button>
 
                             <Offcanvas show={show} onHide={handleClose} responsive="lg">
@@ -140,13 +148,10 @@ const Home = () => {
                                             </ListGroup>
                                         </div>
                                     </div>
+                                  <div className='containter-btn-add-car'>
+                                    <Button style={myStylesBtnAddCar}  variant="primary"><i className='bx bxs-cart-add bx-xs' ></i></Button>
+                                </div>
                                 </Card>
-
-
-
-
-
-
 
                             ))
 
