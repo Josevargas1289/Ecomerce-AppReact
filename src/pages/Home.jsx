@@ -124,7 +124,7 @@ const Home = () => {
                                         </div>
                                         <div className='card-info'>
                                             <ListGroup className="list-group-flush">
-                                                <ListGroup.Item>
+                                                <ListGroup.Item className='list-group-card'>
 
                                                 </ListGroup.Item>
                                                 <Card.Title>
