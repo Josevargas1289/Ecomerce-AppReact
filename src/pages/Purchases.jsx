@@ -2,7 +2,8 @@ import React from 'react';
 
 const Purchases = () => {
     return (
-        <div className='component'>
+        <div>
+           
             <h1>Purchases</h1>
         </div>
     );
