@@ -28,6 +28,14 @@ export const filterProductsCategoryThunk = (id) => (dispatch) => {
         .finally(() => dispatch(setIsLoading(false)));
 }
 
+export const filterTitleThunk = (title) => (dispatch) => {
+    dispatch(setIsLoading(true));
+    return axios
+        .get(`https://e-commerce-api-v2.academlo.tech/api/v1/products?title=${title}`)
+        .then((res) => dispatch(SetProducts(res.data)))
+        .finally(() => dispatch(setIsLoading(false)));
+}
+
 export const {SetProducts } = productsSlice.actions;
 
 export default productsSlice.reducer;

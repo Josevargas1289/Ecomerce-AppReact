@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Accordion, Alert, Button, Card, Col, Container, Form, InputGroup, ListGroup, Offcanvas, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { filterProductsCategoryThunk, getProductsThunk } from '../store/slices/Products.slice';
+import { filterProductsCategoryThunk, filterTitleThunk, getProductsThunk } from '../store/slices/Products.slice';
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -13,6 +13,7 @@ const Home = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [newSearch, setnewSearch] = useState('')
 
 
 
@@ -36,11 +37,9 @@ const Home = () => {
                 <Col xs={1} md={2} lg={3} className="g-4">
                     <div className='prueba'>
                         <>
-                            <Button variant="none" className="d-lg-none" onClick={handleShow}>
+                            <Button variant="none" className="d-lg-none" onClick={handleShow} style={{color: 'white'}}>
                                 <i className='bx bxs-filter-alt'> Filter</i>
                             </Button>
-
-
 
                             <Offcanvas show={show} onHide={handleClose} responsive="lg">
                                 <Offcanvas.Header closeButton>
@@ -81,7 +80,7 @@ const Home = () => {
                 </Col>
 
 
-                <Col>
+                <Col className='column-car'>
                     <div className='btn-search'>
                         <InputGroup className="mb-3">
                             <Form.Control
@@ -89,51 +88,73 @@ const Home = () => {
                                 placeholder="What are you looking for?"
                                 aria-label="Recipient's username"
                                 aria-describedby="basic-addon2"
+                                value={newSearch}
+                                onChange={(e) => setnewSearch(e.target.value)}
+
                             />
-                            <Button bg='success' variant="primary" id="button-addon1">
+                            <Button bg='success' variant="primary" id="button-addon1"
+                                onClick={() => dispatch(filterTitleThunk(newSearch))}
+                            >
                                 <i className='bx bx-search-alt-2 bx-md '></i>
                             </Button>
                         </InputGroup>
                     </div>
 
 
-                    <div className='card-container'>
 
 
 
-                        <Row className=" home-card">
+
+                    <Row className=" home-card">
 
 
-                            {
+                        {
 
-                                productsList.map(products => (
 
-                                    <Card className='card-products' key={products.id} style={{ width: '15rem' }} onClick={() => navigate(`/produc/${products.id}`)}>
-                                        <Card.Img lg='white' className='img-car' style={{ width: '100%', heigth: '100%' }} variant="center" src={products?.images[0]?.url} />
-
-                                        <Card.Body className='card-body'>
-
-                                        </Card.Body>
-
-                                        <ListGroup className="list-group-flush">
-                                            <br />
-                                            <span>{products.brand}</span>
-                                            <ListGroup.Item>{products.title}</ListGroup.Item>
-                                            <span>Price:</span>
-                                            <ListGroup.Item>{products.price}</ListGroup.Item>
-                                        </ListGroup>
-
-                                        <Button className='btn-add-car' variant="primary"><i className='bx bxs-cart-download bx-sm' ></i> Add-car</Button>
+                            productsList.map(products => (
 
 
 
-                                    </Card>
+                                <Card className='container-card-product' key={products.id} style={{ width: '15rem' }} onClick={() => navigate(`/produc/${products.id}`)}>
+                                    <div className='card-product'>
+                                        <div className='img-card'>
+                                            <Card.Body>
+                                                <Card.Img className='img-product' variant="top" src={products?.images[0]?.url} />
+                                            </Card.Body>
+                                        </div>
+                                        <div className='card-info'>
+                                            <ListGroup className="list-group-flush">
+                                                <ListGroup.Item>
 
-                                ))
+                                                </ListGroup.Item>
+                                                <Card.Title>
+                                                    <span>{products.brand}</span>
+                                                    <br />
+                                                    {products.title}
+                                                    <br />
+                                                    <span>Price:</span>
+                                                    <br />
+                                                    {products.price}
 
-                            }
-                        </Row>
-                    </div>
+                                                </Card.Title>
+                                            </ListGroup>
+                                        </div>
+                                    </div>
+                                </Card>
+
+
+
+
+
+
+
+                            ))
+
+
+                        }
+
+                    </Row>
+
 
                 </Col>
 
