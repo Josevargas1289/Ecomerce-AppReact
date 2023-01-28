@@ -45,7 +45,7 @@ const Home = () => {
                 <Col xs={1} md={2} lg={3} className="g-4">
                     <div className='prueba'>
                         <>
-                            <Button variant="outline-danger" className='d-lg-none ' onClick={handleShow} style={{color: 'white'}}>
+                            <Button variant="danger"  className='d-lg-none ' onClick={handleShow} style={{color: 'white'}}>
                                 <i className='bx bxs-filter-alt bx-xs'> </i>
                             </Button>
 
