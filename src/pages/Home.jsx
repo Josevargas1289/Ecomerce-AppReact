@@ -45,8 +45,8 @@ const Home = () => {
                 <Col xs={1} md={2} lg={3} className="g-4">
                     <div className='prueba'>
                         <>
-                            <Button variant="none" className='d-lg-none ' onClick={handleShow} style={{color: 'white'}}>
-                                <i className='bx bxs-filter-alt bx-sm'> </i>
+                            <Button variant="outline-danger" className='d-lg-none ' onClick={handleShow} style={{color: 'white'}}>
+                                <i className='bx bxs-filter-alt bx-xs'> </i>
                             </Button>
 
                             <Offcanvas show={show} onHide={handleClose} responsive="lg">
