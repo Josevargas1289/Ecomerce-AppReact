@@ -1,26 +1,46 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Button, Carousel, Col, Container, Row } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { Button, Card, Carousel, Col, Container, ListGroup, Row } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { filterProductsCategoryThunk } from '../store/slices/Products.slice';
 
 const ProductsId = () => {
     const { id } = useParams();
     const [products, setProducts] = useState({})
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const productsSuggested = useSelector((state) => state.products);
+
 
     useEffect(() => {
         axios.get(`https://e-commerce-api-v2.academlo.tech/api/v1/products/${id}/`)
-            .then((res) => setProducts(res.data));
+            .then((res) => {
+                setProducts(res.data)
+                dispatch(filterProductsCategoryThunk(res.data.category.id))
+                scrollTo(0, 0)
 
-    }, []);
-    console.log(products);
+            });
+
+    }, [ id ]);
+    
+
+    // console.log(products);
     let counter = 0;
 
     const btnaddProducId = {
         height: '55px',
     }
+    const myStylesBtnAddCar = {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: '.8rem',
+        borderRadius: '50%'
+    }
 
 
     return (
+
         <div className='component-productsid'>
             <div className='container-info-productId'>
 
@@ -118,16 +138,74 @@ const ProductsId = () => {
                     </Row>
                 </Container>
 
-
-
-
-
-
-
+            </div>
+            <div>
 
             </div>
+            <Link className='title-card-similar'>Discover similar items</Link>
+
+            <Container>
+                <Row className=" home-card" >
+                    {
+                        productsSuggested.map((procductItem) => (
+                            <Card className='container-card-product' key={procductItem.id} style={{ width: '18rem' }} onClick={() => navigate(`/produc/${procductItem.id}`)}>
+                                <Col>
+                                    <div className='card-product'>
+                                        <div className='img-card'>
+                                            <Card.Body>
+                                                <Card.Img className='img-product' variant="top" src={procductItem?.images[0]?.url} />
+                                            </Card.Body>
+                                        </div>
+                                        <div className='card-info'>
+                                            <ListGroup className="list-group-flush">
+                                                <ListGroup.Item className='list-group-card'>
+
+                                                </ListGroup.Item>
+                                                <Card.Title>
+                                                    <span>{procductItem.brand}</span>
+                                                    <br />
+                                                    {procductItem.title}
+                                                    <br />
+                                                    <span>Price:</span>
+                                                    <br />
+                                                    {procductItem.price}
+
+                                                </Card.Title>
+                                            </ListGroup>
+                                        </div>
+                                    </div>
+                                    <div className='containter-btn-add-car'>
+                                        <Button style={myStylesBtnAddCar} variant="primary"><i className='bx bxs-cart-add bx-xs' ></i></Button>
+                                    </div>
+                                </Col>
+                            </Card>
+
+                        ))
+                    }
+
+
+                </Row>
+
+            </Container>
+
+
 
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     );
 };
 

@@ -16,7 +16,7 @@ const AppNavbar = () => {
             navbarScroll
           >
             <Nav.Link as={Link} to={'/login'}>Login</Nav.Link>
-            <Nav.Link as={Link} to={'/produc/:id'}>Products</Nav.Link>
+            {/* <Nav.Link as={Link} to={'/produc/:id'}>Products</Nav.Link> */}
             <Nav.Link as={Link} to={'/purchases'}>Purchases</Nav.Link>
           </Nav>
 

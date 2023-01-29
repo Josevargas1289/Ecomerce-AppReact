@@ -29,6 +29,7 @@ const Home = () => {
         dispatch(getProductsThunk());
         axios.get('https://e-commerce-api-v2.academlo.tech/api/v1/categories')
             .then((res) => setCategories(res.data))
+           
 
     }, []);
     // console.log(productsList);
