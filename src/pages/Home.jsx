@@ -126,7 +126,7 @@ const Home = () => {
 
 
 
-                                <Card className='container-card-product' key={products.id} style={{ width: '15rem' }} onClick={() => navigate(`/produc/${products.id}`)}>
+                                <Card className='container-card-product card-home' key={products.id} style={{ width: '15rem' }} onClick={() => navigate(`/produc/${products.id}`)}>
                                     <div className='card-product'>
                                         <div className='img-card'>
                                             <Card.Body>

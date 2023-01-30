@@ -105,7 +105,12 @@ span {
     align-items: center;
     margin: 1rem;
     cursor: pointer;
+    margin-left: 3rem;
    
+}
+.card-home{
+    margin-left: -3rem;
+
 }
 
 .img-card{
@@ -345,7 +350,11 @@ footer{
         padding: 2rem;
     
     }
-   
+    .card-home{
+        margin-left: 1rem;
+    
+    }
+    
     
     
 }
