@@ -10,6 +10,8 @@ import AppNavbar from './components/AppNavbar'
 import LoadingScreen from './components/LoadingScreen'
 import { useSelector } from 'react-redux'
 import Footer from './components/Footer'
+import Car from './components/Car'
+
 
 function App() {
 
@@ -18,8 +20,10 @@ function App() {
   return (
     <div className="App">
       <HashRouter>
+       
         <AppNavbar />
         <Footer />
+        
 
         {isLoading && <LoadingScreen />}
 

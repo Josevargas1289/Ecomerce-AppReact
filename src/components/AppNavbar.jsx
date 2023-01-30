@@ -1,12 +1,14 @@
 import React from 'react';
 import { Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Car from './Car';
 
 const AppNavbar = () => {
   return (
 
     <Navbar bg="primary" expand="lg" fixed="top" variant='dark' >
       <Container fluid >
+       
         <Navbar.Brand as={Link} to={'/'}>Ecomerce</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -18,7 +20,9 @@ const AppNavbar = () => {
             <Nav.Link as={Link} to={'/login'}>Login</Nav.Link>
             {/* <Nav.Link as={Link} to={'/produc/:id'}>Products</Nav.Link> */}
             <Nav.Link as={Link} to={'/purchases'}>Purchases</Nav.Link>
+            <Car/>
           </Nav>
+          
 
         </Navbar.Collapse>
       </Container>
