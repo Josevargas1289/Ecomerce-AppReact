@@ -97,13 +97,14 @@ span {
 }
 .container-card-product{
     height: 300px;
-    width: 100%;
-   display: flex;
-   justify-content: center;
-   justify-items: center;
-   align-items: center;
-   margin: 1rem;
-   cursor: pointer;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    margin: 1rem;
+    cursor: pointer;
    
 }
 
@@ -187,7 +188,7 @@ span {
     margin-bottom: 3rem;
     margin-top: 1rem;
     margin-right: 2rem;
-    padding: 2rem;
+    padding: 1rem;
     
 
 }
@@ -337,6 +338,11 @@ footer{
         margin-bottom: 3rem;
         margin-top: 4rem;
         margin-right: 2rem;
+    
+    }
+    .info-productid{
+
+        padding: 2rem;
     
     }
    
