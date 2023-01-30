@@ -9,25 +9,31 @@ import ProductsId from './pages/ProductsId'
 import AppNavbar from './components/AppNavbar'
 import LoadingScreen from './components/LoadingScreen'
 import { useSelector } from 'react-redux'
+import Footer from './components/Footer'
 
 function App() {
-  
-  const isLoading = useSelector((state)=>state.isLoading);
+
+  const isLoading = useSelector((state) => state.isLoading);
 
   return (
     <div className="App">
       <HashRouter>
-      <AppNavbar/>
-      {isLoading && <LoadingScreen/>}
-        
+        <AppNavbar />
+        <Footer />
+
+        {isLoading && <LoadingScreen />}
+
         <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/produc/:id' element={<ProductsId/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/purchases'element={<Purchases/>}/>
+          <Route path='/' element={<Home />} />
+          <Route path='/produc/:id' element={<ProductsId />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/purchases' element={<Purchases />} />
         </Routes>
+     
       </HashRouter>
+      
     </div>
+
   )
 }
 

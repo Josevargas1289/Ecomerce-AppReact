@@ -48,7 +48,7 @@ const ProductsId = () => {
                     <Row>
 
 
-                        <Col sm={5}>
+                        <Col sm={6}>
                             <div className='Title-productsId'>
                                 <Link className='link-producid' as={Link} to={'/'}>Home</Link>
                                 <small></small>

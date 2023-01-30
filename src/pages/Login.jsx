@@ -4,6 +4,8 @@ const Login = () => {
     return (
         <div className='component'>
             <h1>Login</h1>
+           
+
         </div>
     );
 };

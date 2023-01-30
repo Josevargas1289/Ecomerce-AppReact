@@ -11,6 +11,7 @@ html {
 
 
 
+
 .overlay {
     z-index: 999;
 }
@@ -21,11 +22,7 @@ html {
     margin-top: 6rem;
 }
 
-.App {
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
+
 
 .mb-1 {
     width: 100%;
@@ -35,8 +32,8 @@ html {
 
 .d-lg-none {
     position: absolute;
-    left: 17rem;
-    top: 12.5rem;
+    left: 18.2rem;
+    top: 6.5rem;
     
     transition: all 300ms;
     
@@ -190,6 +187,8 @@ span {
     margin-bottom: 3rem;
     margin-top: 1rem;
     margin-right: 2rem;
+    padding: 2rem;
+    
 
 }
 .price-quantity{
@@ -236,6 +235,7 @@ span {
 }
 .text-description{
     text-align: justify;
+    
 }
 .Title-productsId{
     display: flex;
@@ -287,6 +287,39 @@ small{
     margin-bottom: 4rem;
     text-decoration: none;
 }
+
+/* footer */
+.App{
+  
+    position: relative;
+ 
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.763);
+    position: absolute;
+    bottom: -10rem;
+    left: 0;
+    right: 0;
+    color: white;
+    height: 50px;
+    padding: 3rem;
+
+}
+.footer-icons{
+    display: flex;
+    justify-content: center;
+  
+}
+.title-footer{
+    margin-top: 2rem;
+}
+
 
 
 
