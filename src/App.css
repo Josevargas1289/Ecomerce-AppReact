@@ -252,7 +252,7 @@ span {
     margin-bottom: 3rem;
     gap: 1rem;
 }
-small{
+.smproducid{
    display: flex;
     width: 5px;
     height: 5px;
@@ -326,7 +326,9 @@ footer{
     margin-top: 2rem;
 }
 
-
+.page-login{
+    padding: 10rem;
+}
 
 
 

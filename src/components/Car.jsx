@@ -22,7 +22,7 @@ const Car = ({ name, ...props }) => {
             
           
             <Nav.Link variant="primary" onClick={handleShow} className="me-2">
-            <i class='bx bxs-cart bx-sm'></i>
+            <i className='bx bxs-cart bx-sm'></i>
             </Nav.Link>
             <Offcanvas show={show} onHide={handleClose} {...props}>
                 <Offcanvas.Header closeButton>
