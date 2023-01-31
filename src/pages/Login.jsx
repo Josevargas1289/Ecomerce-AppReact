@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
@@ -28,7 +28,24 @@ const Login = () => {
 
     return (
         <Form onSubmit={handleSubmit(submit)} className='page-login'>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <strong className='welcome_login'>
+            Welcome! Enter your email and password to continue
+            </strong>
+            <br />
+
+            <strong className='idication-login'>
+            You have to Log In to access to your cart
+            </strong>
+            <br />
+
+            <div className='tex-data-login'>
+                <strong className='tes-data'>Test Data</strong>
+            <i class='bx bx-envelope'> john@gmail.com</i>
+            <i class='bx bx-key'> john1234</i>
+
+            </div>
+
+            <Form.Group className="mb-4" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" placeholder="Enter email"
                     {...register('email')}
@@ -37,18 +54,19 @@ const Login = () => {
                 </Form.Text>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-4" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password"
                     {...register('password')}
                 />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-
-            </Form.Group>
             <Button variant="primary" type="submit">
                 Submit
             </Button>
+            </Form.Group>
+            <strong>Don't have an account? <Link className='signUp'>Sign up</Link></strong>
+            
         </Form>
     );
 };

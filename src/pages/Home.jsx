@@ -145,7 +145,7 @@ const Home = () => {
                                                     <br />
                                                     <span>Price:</span>
                                                     <br />
-                                                    {products.price}
+                                                    {`$ ${products.price}`}
 
                                                 </Card.Title>
                                             </ListGroup>

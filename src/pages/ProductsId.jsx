@@ -168,7 +168,7 @@ const ProductsId = () => {
                                                     <br />
                                                     <span>Price:</span>
                                                     <br />
-                                                    {procductItem.price}
+                                                    {`$ ${procductItem.price}`}
 
                                                 </Card.Title>
                                             </ListGroup>
