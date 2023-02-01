@@ -381,9 +381,17 @@ footer{
 .page-purchases{
 
    display: flex;
+   flex-direction: column;
    width: 100%;
    padding: 7rem;
 
+}
+.title-purchases{
+    margin-bottom: 2rem;
+}
+.img-purchase{
+    width: 80px;
+    height: 80px;
 }
 
 /* media query */
