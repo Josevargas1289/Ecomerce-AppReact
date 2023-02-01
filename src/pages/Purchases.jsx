@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getPurchasesThunk } from '../store/slices/purchases.slice';
@@ -19,23 +20,28 @@ const Purchases = () => {
     return (
 
         <div className='page-purchases'>
-            <div className='Title-productsId title-purchases'>
+            <div className='container-title-purchases'>
                 <Link className='link-producid' as={Link} to={'/'}>Home</Link>
                 <small className='smproducid'></small>
-                <strong> Purchases</strong>
+                <strong>My Purchases</strong>
             </div>
-            <div>
-                <h4>My Purchases</h4>
-            </div>
+
             {
                 purchases.map((purchase) => (
-                    <div className='container-mypurchases'>
-                    <ul key={purchase.id}>
-                        <li><img className='img-purchase' src={purchase.product.images[0].url} alt="" /></li>
-                        <li><strong>{purchase.product.title}</strong></li>
-                        <li><span>{purchase.product.createdAt }</span></li>
+                    <div key={purchase.id} className='container-mypurchases'>
+                        <Container>
+                            <Link to={`/produc/${purchase.product.id}`} className='myPurchases'>
 
-                    </ul>
+                                <Row className='rowpurchases'>
+                                    <Col><img className='img-purchase' src={purchase.product.images[0].url} alt="" /></Col>
+                                    <Col><strong>{purchase.product.title}</strong></Col>
+                                    <Col className='date-purchases'><span>{purchase.product.createdAt.slice(0, 10)}</span></Col>
+                                    <Col>{purchase.quantity}</Col>
+                                    <Col >{`$ ${purchase.product.price}`}</Col>
+                                </Row>
+                            </Link>
+
+                        </Container>
                     </div>
                 ))
             }

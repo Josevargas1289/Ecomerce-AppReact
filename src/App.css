@@ -261,7 +261,7 @@ span {
     gap: 1rem;
 }
 .smproducid{
-   display: flex;
+    display: flex;
     width: 5px;
     height: 5px;
     background-color: red;
@@ -381,18 +381,50 @@ footer{
 .page-purchases{
 
    display: flex;
+   justify-content: center;
+   justify-items: center;
+   justify-items: center;
+   align-items: flex-start;
    flex-direction: column;
    width: 100%;
-   padding: 7rem;
+   text-decoration: none;
+   gap: 2rem;
+}
+.container-title-purchases{
+  
+    display: flex;
+    margin-bottom: 3rem;
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    font-size: 30px;
+    margin-top: 6rem;
+    margin-left: 1rem;
+       
+}
+.rowpurchases{
+   
+    width: 100%;
+    
 
 }
-.title-purchases{
-    margin-bottom: 2rem;
+
+.container-mypurchases{
+    width: 100%;
+    
 }
+.date-purchases{
+    display: none;
+}
+
 .img-purchase{
     width: 80px;
     height: 80px;
 }
+.myPurchases{
+    text-decoration: none;
+}
+
 
 /* media query */
 @media (min-width: 900px){
@@ -434,6 +466,11 @@ footer{
         padding: 3rem;
     
     }
+    .date-purchases{
+        display: block;
+    }
     
+
+
     
 }

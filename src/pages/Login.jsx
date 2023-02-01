@@ -40,8 +40,8 @@ const Login = () => {
 
             <div className='tex-data-login'>
                 <strong className='tes-data'>Test Data</strong>
-            <i class='bx bx-envelope'> john@gmail.com</i>
-            <i class='bx bx-key'> john1234</i>
+            <i className='bx bx-envelope'> john@gmail.com</i>
+            <i className='bx bx-key'> john1234</i>
 
             </div>
 
