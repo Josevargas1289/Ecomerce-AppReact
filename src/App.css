@@ -378,6 +378,8 @@ footer{
     
 }
 
+
+
 .page-purchases{
 
    display: flex;
@@ -405,12 +407,23 @@ footer{
 .rowpurchases{
    
     width: 100%;
-    
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  
+   
 }
 
+
 .container-mypurchases{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
     width: 100%;
+
+
+
     
 }
 .date-purchases{
@@ -424,6 +437,8 @@ footer{
 .myPurchases{
     text-decoration: none;
 }
+
+
 
 
 /* media query */
@@ -469,7 +484,27 @@ footer{
     .date-purchases{
         display: block;
     }
-    
+ 
+    .container-title-purchases{
+  
+        display: flex;
+        margin-bottom: 3rem;
+        gap: 1rem;
+        justify-items: center;
+        align-items: center;
+        font-size: 30px;
+        margin-top: 8rem;
+        margin-left: 5rem;
+           
+    }
+    .rowpurchases{
+   
+      
+        background-color: aliceblue;
+        
+      
+       
+    }
 
 
     

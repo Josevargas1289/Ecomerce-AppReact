@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { filterProductsCategoryThunk, filterTitleThunk, getProductsThunk } from '../store/slices/Products.slice';
 
-const Home = () => {
+const Home = ({ name, ...props }) => {
     const dispatch = useDispatch();
     const productsList = useSelector((state) => state.products)
     const navigate = useNavigate();
@@ -21,17 +21,17 @@ const Home = () => {
         padding: '.8rem',
         borderRadius: '50%'
     }
-  
-   
+
+
 
 
     useEffect(() => {
         dispatch(getProductsThunk());
         axios.get('https://e-commerce-api-v2.academlo.tech/api/v1/categories')
             .then((res) => setCategories(res.data))
-            scrollTo(0, 0)
+        scrollTo(0, 0)
 
-           
+
 
     }, []);
     // console.log(productsList);
@@ -48,13 +48,15 @@ const Home = () => {
                 <Col xs={1} md={2} lg={3} className="g-4">
                     <div className='prueba'>
                         <>
-                            <Button variant="info"  className='d-lg-none ' onClick={handleShow} style={{color: 'white'}}>
+                            <Button variant="info" className='d-lg-none ' onClick={handleShow} style={{ color: 'white' }}>
                                 <i className='bx bxs-filter-alt bx-xs'> </i>
                             </Button>
+                            
 
-                            <Offcanvas show={show} onHide={handleClose} responsive="lg">
+                            <Offcanvas show={show} onHide={handleClose} responsive="lg" placement='end'>
                                 <Offcanvas.Header closeButton>
-
+                                   <Button onClick={handleClose}>X</Button>
+                                    
                                 </Offcanvas.Header>
                                 <Offcanvas.Body>
                                     <div className="mb-1">
@@ -151,9 +153,9 @@ const Home = () => {
                                             </ListGroup>
                                         </div>
                                     </div>
-                                  <div className='containter-btn-add-car'>
-                                    <Button style={myStylesBtnAddCar}  variant="primary"><i className='bx bxs-cart-add bx-xs' ></i></Button>
-                                </div>
+                                    <div className='containter-btn-add-car'>
+                                        <Button style={myStylesBtnAddCar} variant="primary"><i className='bx bxs-cart-add bx-xs' ></i></Button>
+                                    </div>
                                 </Card>
 
                             ))
