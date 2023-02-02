@@ -42,9 +42,9 @@ const ProductsId = () => {
         borderRadius: '50%'
     }
 
-    const addCart = (id)=>{
+    const addCart = ()=>{
        const productId ={
-        quantity: quantity ,
+        quantity: quantity,
         productId: products.id 
        }
        dispatch(addproductIdThunk(productId))

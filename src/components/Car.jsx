@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Nav, NavLink, Offcanvas } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addproductIdThunk, getcartsThunk, purchasescartThunk } from "../store/slices/addcart.slice";
+import { addproductIdThunk, deleteProductCarThunk, getcartsThunk, purchasescartThunk } from "../store/slices/addcart.slice";
 
 
 const Car = ({ name, ...props }) => {
@@ -20,7 +20,7 @@ const Car = ({ name, ...props }) => {
         dispatch(getcartsThunk())
 
     }, [])
-    
+    console.log(addcart);
    
    
 
@@ -54,7 +54,10 @@ const Car = ({ name, ...props }) => {
                                         </div>
                                     </div>
                                     <div>
-                                        <button className="btndelete-cart"><i className='bx bxs-trash bx-sm'></i></button>
+                                        <button
+                                        onClick={()=> dispatch(deleteProductCarThunk(product.id))}
+                                        
+                                        className="btndelete-cart"><i className='bx bxs-trash bx-sm'></i></button>
                                     </div>
                                 </div>
                                 <div className="price-total">

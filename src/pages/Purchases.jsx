@@ -14,7 +14,7 @@ const Purchases = () => {
 
     }, [])
 
-    console.log(purchases);
+    // console.log(purchases);
 
 
     return (
@@ -29,16 +29,16 @@ const Purchases = () => {
             {
                 purchases.map((purchase) => (
                     <div key={purchase.id} className='container-mypurchases'>
-                        <Container cla>
-                            <Link to={`/produc/${purchase.product.id}`} className='myPurchases'>
+                        <Container>
+                            <Link to={`/produc/${purchase.product?.id}`} className='myPurchases'>
 
                                 <Row className='rowpurchases'>
                             
-                                    <Col><img className='img-purchase' src={purchase.product.images[0].url} alt="" /></Col>
-                                    <Col><strong>{purchase.product.title}</strong></Col>
-                                    <Col className='date-purchases'><span>{purchase.product.createdAt.slice(0, 10)}</span></Col>
+                                    <Col><img className='img-purchase' src={purchase.product?.images[0].url} alt="" /></Col>
+                                    <Col><strong>{purchase.product?.title}</strong></Col>
+                                    <Col className='date-purchases'><span>{purchase.product?.createdAt.slice(0, 10)}</span></Col>
                                     <Col>{purchase.quantity}</Col>
-                                    <Col >{`$ ${purchase.product.price}`}</Col>
+                                    <Col >{`$ ${purchase.product?.price}`}</Col>
                                  
                                 
                                 </Row>
