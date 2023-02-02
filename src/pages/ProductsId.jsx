@@ -3,14 +3,18 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card, Carousel, Col, Container, ListGroup, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { addproductIdThunk } from '../store/slices/addcart.slice';
 import { filterProductsCategoryThunk } from '../store/slices/Products.slice';
 
 const ProductsId = () => {
+
+
     const { id } = useParams();
     const [products, setProducts] = useState({})
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const productsSuggested = useSelector((state) => state.products);
+    const [quantity, setQuantity] = useState(1)
 
 
     useEffect(() => {
@@ -26,7 +30,7 @@ const ProductsId = () => {
     
 
     // console.log(products);
-    let counter = 0;
+   
 
     const btnaddProducId = {
         height: '55px',
@@ -36,6 +40,22 @@ const ProductsId = () => {
         justifyContent: 'center',
         padding: '.8rem',
         borderRadius: '50%'
+    }
+
+    const addCart = (id)=>{
+       const productId ={
+        quantity: quantity ,
+        productId: products.id 
+       }
+       dispatch(addproductIdThunk(productId))
+    }
+
+    const decrementQuantity=()=>{
+        setQuantity(quantity -1)
+    }
+    
+    const incrementQuantity=()=>{
+        setQuantity(quantity +1)
     }
 
 
@@ -119,17 +139,16 @@ const ProductsId = () => {
                                     <div className='quantity'>
                                         <span>Quantity</span>
                                         <div className='quaintity-info'>
-                                            <button className='btn-quantity'> - </button>
-                                            <div className='btn-quantity'>{counter}</div>
-                                            <button className='btn-quantity'> + </button>
+                                            <button disabled={quantity <= 1} onClick={decrementQuantity} className='btn-quantity'> - </button>
+                                            <input className='btn-quantity' type="text" value={quantity} onChange={(e)=>setQuantity(e.target.value)} />
+                                            <button onClick={incrementQuantity} className='btn-quantity'> + </button>
                                         </div>
 
                                     </div>
 
                                 </div>
 
-                                <Button style={btnaddProducId} variant="danger">Add To Car</Button>
-
+                                <Button onClick={addCart} style={btnaddProducId} variant="danger">Add To Car</Button>
 
                             </div>
 

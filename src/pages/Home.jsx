@@ -2,7 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Accordion, Alert, Button, Card, Col, Container, Form, InputGroup, ListGroup, Offcanvas, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { addproductIdThunk } from '../store/slices/addcart.slice';
 import { filterProductsCategoryThunk, filterTitleThunk, getProductsThunk } from '../store/slices/Products.slice';
 
 const Home = ({ name, ...props }) => {
@@ -14,6 +15,14 @@ const Home = ({ name, ...props }) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [newSearch, setnewSearch] = useState('')
+    const { id } = useParams();
+    const addcart = useSelector((state)=>state.addcart)
+
+
+    
+    const [quantity, setQuantity] = useState(1)
+
+
 
     const myStylesBtnAddCar = {
         display: 'flex',
@@ -21,6 +30,14 @@ const Home = ({ name, ...props }) => {
         padding: '.8rem',
         borderRadius: '50%'
     }
+
+    const addCart = (id)=>{
+        const productId ={
+         quantity: quantity,
+         productId: addCart.id
+        }
+        dispatch(addproductIdThunk(productId))
+     }
 
 
 
@@ -57,7 +74,7 @@ const Home = ({ name, ...props }) => {
                                 <Offcanvas.Header closeButton>
                                     <div className='container-btnclose'>
                                         <h1>Filters</h1>
-                                        <i onClick={handleClose} class='bx bx-x bx-md'></i>
+                                        <i onClick={handleClose} className='bx bx-x bx-md'></i>
                                     
                                    
                                     </div>
@@ -133,8 +150,8 @@ const Home = ({ name, ...props }) => {
 
 
 
-                                <Card className='container-card-product card-home' key={products.id} style={{ width: '15rem' }} onClick={() => navigate(`/produc/${products.id}`)}>
-                                    <div className='card-product'>
+                                <Card className='container-card-product card-home' key={products.id} style={{ width: '15rem' }} >
+                                    <div className='card-product' onClick={() => navigate(`/produc/${products.id}`)}>
                                         <div className='img-card'>
                                             <Card.Body>
                                                 <Card.Img className='img-product' variant="top" src={products?.images[0]?.url} />
@@ -159,7 +176,7 @@ const Home = ({ name, ...props }) => {
                                         </div>
                                     </div>
                                     <div className='containter-btn-add-car'>
-                                        <Button style={myStylesBtnAddCar} variant="primary"><i className='bx bxs-cart-add bx-xs' ></i></Button>
+                                        <Button onClick={addCart} style={myStylesBtnAddCar} variant="primary"><i className='bx bxs-cart-add bx-xs' ></i></Button>
                                     </div>
                                 </Card>
 
