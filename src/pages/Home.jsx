@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Accordion, Alert, Button, Card, Col, Container, Form, InputGroup, ListGroup, Offcanvas, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { addproductIdThunk } from '../store/slices/addcart.slice';
+// import { addproductIdThunk } from '../store/slices/addcart.slice';
 import { filterProductsCategoryThunk, filterTitleThunk, getProductsThunk } from '../store/slices/Products.slice';
 
 const Home = ({ name, ...props }) => {
@@ -15,12 +15,12 @@ const Home = ({ name, ...props }) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [newSearch, setnewSearch] = useState('')
-    const { id } = useParams();
-    const addcart = useSelector((state)=>state.addcart)
+    // const { id } = useParams();
+    // const addcart = useSelector((state)=>state.addcart)
 
 
     
-    const [quantity, setQuantity] = useState(1)
+    // const [quantity, setQuantity] = useState(1)
 
 
 
@@ -31,13 +31,13 @@ const Home = ({ name, ...props }) => {
         borderRadius: '50%'
     }
 
-    const addCart = (id)=>{
-        const productId ={
-         quantity: quantity,
-         productId: addCart.id
-        }
-        dispatch(addproductIdThunk(productId))
-     }
+    // const addCart = (id)=>{
+    //     const productId ={
+    //      quantity: quantity,
+    //      productId: addCart.id
+    //     }
+    //     dispatch(addproductIdThunk(productId))
+    //  }
 
 
 
@@ -176,7 +176,7 @@ const Home = ({ name, ...props }) => {
                                         </div>
                                     </div>
                                     <div className='containter-btn-add-car'>
-                                        <Button onClick={addCart} style={myStylesBtnAddCar} variant="primary"><i className='bx bxs-cart-add bx-xs' ></i></Button>
+                                        <Button  style={myStylesBtnAddCar} variant="primary"><i className='bx bxs-cart-add bx-xs' ></i></Button>
                                     </div>
                                 </Card>
 
