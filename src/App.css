@@ -42,12 +42,17 @@ html {
     position: absolute;
     left: 16.5rem;
     top: 6.5rem;
-    
     transition: all 300ms;
+    color: black;
     
     
     
 }
+.container-btnclose{
+    display: flex;
+    gap: 16rem;
+}
+
 
 .mb-3 {
 

@@ -47,15 +47,21 @@ const Home = ({ name, ...props }) => {
 
                 <Col xs={1} md={2} lg={3} className="g-4">
                     <div className='prueba'>
-
                         <>
-                            <Button className='d-lg-none' variant="primary" onClick={handleShow}>
+                            <Button variant="info" className='d-lg-none ' onClick={handleShow} style={{ color: 'white' }}>
                                 <i className='bx bxs-filter-alt bx-xs'> </i>
                             </Button>
 
-                            <Offcanvas placement='end' show={show} onHide={handleClose}>
+
+                            <Offcanvas show={show} onHide={handleClose} responsive="lg" placement='end'>
                                 <Offcanvas.Header closeButton>
-                                    <Offcanvas.Title>Filters</Offcanvas.Title>
+                                    <div className='container-btnclose'>
+                                        <h1>Filters</h1>
+                                        <i onClick={handleClose} class='bx bx-x bx-md'></i>
+                                    
+                                   
+                                    </div>
+
                                 </Offcanvas.Header>
                                 <Offcanvas.Body>
                                     <div className="mb-1">
@@ -83,7 +89,6 @@ const Home = ({ name, ...props }) => {
                                         </Accordion>
 
                                     </div>
-
                                 </Offcanvas.Body>
                             </Offcanvas>
                         </>
