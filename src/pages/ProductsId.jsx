@@ -26,11 +26,11 @@ const ProductsId = () => {
 
             });
 
-    }, [ id ]);
-    
+    }, [id]);
+
 
     // console.log(products);
-   
+
 
     const btnaddProducId = {
         height: '55px',
@@ -42,20 +42,28 @@ const ProductsId = () => {
         borderRadius: '50%'
     }
 
-    const addCart = ()=>{
-       const productId ={
-        quantity: quantity,
-        productId: products.id 
-       }
-       dispatch(addproductIdThunk(productId))
+    const addCart = () => {
+        if (localStorage.getItem('token') === '') {
+           navigate('/login')
+        } else {
+            const productId = {
+                quantity: quantity,
+                productId: products.id
+            }
+            dispatch(addproductIdThunk(productId))
+
+        }
+
     }
 
-    const decrementQuantity=()=>{
-        setQuantity(quantity -1)
+
+
+    const decrementQuantity = () => {
+        setQuantity(quantity - 1)
     }
-    
-    const incrementQuantity=()=>{
-        setQuantity(quantity +1)
+
+    const incrementQuantity = () => {
+        setQuantity(quantity + 1)
     }
 
 
@@ -140,7 +148,7 @@ const ProductsId = () => {
                                         <span>Quantity</span>
                                         <div className='quaintity-info'>
                                             <button disabled={quantity <= 1} onClick={decrementQuantity} className='btn-quantity'> - </button>
-                                            <input className='btn-quantity' type="text" value={quantity} onChange={(e)=>setQuantity(e.target.value)} />
+                                            <input className='btn-quantity' type="text" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
                                             <button onClick={incrementQuantity} className='btn-quantity'> + </button>
                                         </div>
 

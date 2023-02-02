@@ -445,6 +445,9 @@ footer{
 .myPurchases{
     text-decoration: none;
 }
+.car-body-aside{
+    overflow-y: scroll;
+}
 
 .cartAside{
     display: flex;
@@ -454,10 +457,17 @@ footer{
     align-items: center;
     align-content: center;
     margin-bottom: 2rem;
+    position: relative;
+  
+
+
+   
+  
 }
 .containercartAside{
+  
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     justify-items: center;
     align-content: center;
     align-items: center;
@@ -473,6 +483,7 @@ footer{
     width: 80px;
     height: 80px;
     object-fit: contain;
+ 
     
 }
 .price-total{
@@ -486,9 +497,34 @@ footer{
     border: none;
     background-color: transparent;
     color: red;
+    
 }
-.btn-danger {
+
+.div-car{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    justify-items:end;
+    align-content: flex-end;
+    align-items: flex-end;
+    border-top: 1px solid rgba(208, 199, 199, 0.588);
+    /* background-color: #008cba; */
     width: 100%;
+    height: 500px;
+    padding: 1rem;
+}
+.sumTotal{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.btn-danger{
+    width: 97%;
+    display: flex;
+    height: 40px;
 }
 
 

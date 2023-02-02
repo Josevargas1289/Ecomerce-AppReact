@@ -27,11 +27,17 @@ const Home = ({ name, ...props }) => {
     }
 
     const addCart = (itemId)=>{
-        const productId ={
-         quantity: 1,
-         productId: itemId 
+        if (localStorage.getItem('token')==='') {
+            navigate('/login')
+        }else{
+            const productId ={
+                quantity: 1,
+                productId: itemId 
+               }
+               dispatch(addproductIdThunk(productId))
+
         }
-        dispatch(addproductIdThunk(productId))
+        
      }
 
 

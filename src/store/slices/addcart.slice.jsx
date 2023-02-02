@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import getConfig from '../../utils/getConfig';
 import { setIsLoading } from './isLoading.slice';
 
@@ -15,6 +16,7 @@ export const addCartSlice = createSlice({
     }
 });
 
+
 export const getcartsThunk = () => (dispatch) => {
     dispatch(setIsLoading(true));
     return axios.get('https://e-commerce-api-v2.academlo.tech/api/v1/cart',getConfig())
@@ -28,6 +30,7 @@ export const addproductIdThunk = (productId) => (dispatch) => {
         .then((res) => dispatch(getcartsThunk(res.data)))
         .catch(()=>alert('hubo un error'))
         .finally(() => dispatch(setIsLoading(false)));
+      
 }
 export const purchasescartThunk = () => (dispatch) => {
     dispatch(setIsLoading(true));

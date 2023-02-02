@@ -11,6 +11,7 @@ import LoadingScreen from './components/LoadingScreen'
 import { useSelector } from 'react-redux'
 import Footer from './components/Footer'
 import ProtectedRoutes from './components/ProtectedRoutes'
+import Car from './components/Car'
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
 
           <Route element={<ProtectedRoutes/>}>
             <Route path='/purchases' element={<Purchases />} />
+            
+          
+            
 
           </Route>
         </Routes>
