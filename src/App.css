@@ -328,8 +328,10 @@ footer{
     left: 0;
     right: 0;
     color: white;
-    height: 50px;
-    padding: 3rem;
+    height: 100px;
+    padding: 4rem;
+    
+   
 
 }
 .footer-icons{
@@ -552,6 +554,7 @@ footer{
         padding: 2rem;
     
     }
+   
     .card-home{
         margin-left: 1rem;
     
