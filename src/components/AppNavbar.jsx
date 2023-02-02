@@ -23,7 +23,7 @@ const AppNavbar = () => {
       <Navbar bg="primary" expand="lg" fixed="top" variant='dark' >
         <Container fluid >
 
-          <Navbar.Brand as={Link} to={'/'}>Ecomerce</Navbar.Brand>
+          <Navbar.Brand as={Link} to={'/'}>Ecommerce</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
