@@ -141,7 +141,7 @@ const ProductsId = () => {
                                 <div className='price-quantity'>
                                     <div className='price-info'>
                                         <span>Price</span>
-                                        <strong>{products.price}</strong>
+                                        <strong>{`$ ${(products.price)* (quantity)}`}</strong>
                                     </div>
 
                                     <div className='quantity'>

@@ -33,7 +33,7 @@ const Car = ({ name, ...props }) => {
     }, [])
 
     
-    console.log(addcart);
+    // console.log(addcart);
 
     const totalizar = (quantity, price)=>{
         const total = quantity * price
