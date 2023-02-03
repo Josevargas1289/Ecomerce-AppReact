@@ -18,6 +18,13 @@ const Car = ({ name, ...props }) => {
     const dispatch = useDispatch();
 
     const addcart = useSelector((state) => state.addcart)
+
+    let totalCar = 0;
+    addcart.forEach( product =>{
+        const producTotal = Number(product.product.price) * product.quantity;
+        totalCar += producTotal
+        
+    }) 
    
 
     useEffect(() => {
@@ -26,7 +33,7 @@ const Car = ({ name, ...props }) => {
     }, [])
 
     
-    // console.log(addcart);
+    console.log(addcart);
 
     const totalizar = (quantity, price)=>{
         const total = quantity * price
@@ -108,7 +115,7 @@ const Car = ({ name, ...props }) => {
                 <div className="div-car">
                     <div className="sumTotal">
                         <span>Total:</span>
-                        <strong>$nan</strong>
+                        <strong>{`$ ${totalCar}`}</strong>
                     </div>
                  
                     <Button onClick={() => dispatch(purchasescartThunk())} size="sm" variant="danger">Checkout</Button>
