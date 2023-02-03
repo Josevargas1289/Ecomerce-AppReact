@@ -33,25 +33,25 @@ const Car = ({ name, ...props }) => {
         return `$${total}`;
     }
 
-    // const decrement = (product) =>{
-    //     const data = {
-    //         "quantity": product.quantity -1
+    const decrement = (product) =>{
+        const data = {
+            "quantity": product.quantity -1
             
-    //     }
-    //     axios.put(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${product.id}`, getConfig(), data)
-    //     .then((res)=> dispatch(getcartsThunk()))
+        }
+        axios.put(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${product.id}`, data, getConfig())
+        .then((res)=> dispatch(getcartsThunk()))
 
-    // }
+    }
 
 
-    // const increment = (product) =>{
-    //     const data = {
-    //         "quantity": product.quantity + 1
-    //     }
-    //     axios.put(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${product.id}`, getConfig(), data)
-    //     .then((res)=> dispatch(getcartsThunk()))
+    const increment = (product) =>{
+        const data = {
+            "quantity": product.quantity + 1
+        }
+        axios.put(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${product.id}`,data, getConfig())
+        .then((res)=> dispatch(getcartsThunk()))
 
-    // }
+    }
     
     return (
 
@@ -73,14 +73,14 @@ const Car = ({ name, ...props }) => {
                             <div key={product.id} className="cartAside">
                                 <div className="containercartAside">
                                     <div className="">
-                                        <img className="image-car" src={product.product?.images[2].url} alt="" />
+                                        <img className="image-car" src={product.product?.images[1].url} alt="" />
                                     </div>
                                     <div>
                                         <strong>{product.product?.title}</strong>
                                         <div className='quaintity-info'>
-                                            <button  className='btn-quantity'> - </button>
+                                            <button disabled={product.quantity <=1} onClick={()=> decrement(product)} className='btn-quantity'> - </button>
                                             <div className='btn-quantity'>{product.quantity}</div>
-                                            <button className='btn-quantity'> + </button>
+                                            <button onClick={()=> increment(product)} className='btn-quantity'> + </button>
                                         </div>
                                     </div>
                                     <div>
