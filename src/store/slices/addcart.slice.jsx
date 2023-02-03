@@ -28,7 +28,7 @@ export const addproductIdThunk = (productId) => (dispatch) => {
     dispatch(setIsLoading(true));
     return axios.post('https://e-commerce-api-v2.academlo.tech/api/v1/cart', productId, getConfig())
         .then((res) => dispatch(getcartsThunk(res.data)))
-        .catch(()=>alert('hubo un error'))
+        .catch(()=>alert('The application requires login to use some components'))
         .finally(() => dispatch(setIsLoading(false)));
       
 }
