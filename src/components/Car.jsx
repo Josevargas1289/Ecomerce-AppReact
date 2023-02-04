@@ -30,9 +30,6 @@ const Car = ({ name, ...props }) => {
     useEffect(() => {
      if(localStorage.getItem('token')=== ''){
        getConfig()
-     }else{
-        dispatch(getcartsThunk())
-
      }
 
     }, [])
