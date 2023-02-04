@@ -15,11 +15,11 @@ const SingUp = () => {
     
 
     const submit = (data) => {
+       
                
-        axios.post('https://e-commerce-api-v2.academlo.tech/api/v1/users', data)
+        axios.post('https://e-commerce-api-v2.academlo.tech/api/v1/users', data, getConfig())
             .then((res) =>{
                 navigate('/login');
-                scrollTo(0, 0)
 
             })      
     }
