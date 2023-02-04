@@ -6,15 +6,14 @@ import Car from './Car';
 const AppNavbar = () => {
   const navigate = useNavigate();
 
+  const directuser=()=>{
+    if(localStorage.getItem('token')===''){
+      navigate('/login')
 
-
-  const logOut = () => {
-    localStorage.setItem('token', '');
-    navigate('/login')
-
+    }else{
+      navigate('/user')
+    }
   }
-
-
 
   return (
     
@@ -31,9 +30,14 @@ const AppNavbar = () => {
               style={{ maxHeight: '400px', color: 'ligrh' }}
               navbarScroll
             >
-              <Nav.Link as={Link} to={'/login'}>Login</Nav.Link>
-              <Nav.Link onClick={logOut}> Log out</Nav.Link>
-              <Nav.Link as={Link} to={'/purchases'}>Purchases</Nav.Link>
+              {/* <Nav.Link as={Link} to={'/login'}>Login</Nav.Link> */}
+              <Nav.Link onClick={directuser}>
+              <i className='bx bxs-user bx-sm'></i>
+              
+              </Nav.Link>
+              <Nav.Link as={Link} to={'/purchases'}>
+              <i className='bx bxs-shopping-bag-alt bx-sm'></i>
+              </Nav.Link>
               <Car />
             </Nav>
 

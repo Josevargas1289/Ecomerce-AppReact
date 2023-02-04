@@ -531,6 +531,25 @@ footer{
     height: 40px;
 }
 
+.container-user{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 50%;
+    padding-bottom: 15rem;
+   
+}
+.card-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  
+}
+
 
 
 /* media query */
@@ -598,7 +617,15 @@ footer{
       
        
     }
-
+    .container-user{
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        margin-top: 10%;
+        padding-bottom: .1rem;
+    }
 
     
 }

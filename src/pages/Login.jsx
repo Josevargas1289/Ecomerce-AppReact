@@ -10,11 +10,11 @@ const Login = () => {
     const navigate = useNavigate();
 
     const submit = (data) => {
-        console.log(data);
+        // console.log(data);
         axios.post('https://e-commerce-api-v2.academlo.tech/api/v1/users/login', data)
             .then((res) =>{
                 localStorage.setItem('token', res.data.token)
-                navigate('/');
+                navigate('/user');
             //  console.log(res.data)
             })
            
@@ -24,6 +24,7 @@ const Login = () => {
                 }
                 console.log(error);
             })
+         
     }
 
     return (
@@ -65,7 +66,7 @@ const Login = () => {
                 Submit
             </Button>
             </Form.Group>
-            <strong>Don't have an account? <Link className='signUp'>Sign up</Link></strong>
+            <strong>Don't have an account? <Link to={'/singup'} className='signUp'>Sign up</Link></strong>
             
         </Form>
     );
