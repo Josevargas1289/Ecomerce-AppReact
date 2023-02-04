@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { addproductIdThunk } from '../store/slices/addcart.slice';
 import { filterProductsCategoryThunk } from '../store/slices/Products.slice';
+import getConfig from '../utils/getConfig';
 
 const ProductsId = () => {
 
