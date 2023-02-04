@@ -69,7 +69,7 @@ const Car = ({ name, ...props }) => {
 
 
             <Nav.Link variant="primary" onClick={handleShow} className="me-2">
-                <i className='bx bxs-cart bx-sm'></i>
+                <i className='bx bxs-cart bx-sm'> Car</i>
             </Nav.Link>
 
             <Offcanvas className='ofcanvas-container' placement="end" show={show} onHide={handleClose} {...props}>

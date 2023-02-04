@@ -32,11 +32,11 @@ const AppNavbar = () => {
             >
               {/* <Nav.Link as={Link} to={'/login'}>Login</Nav.Link> */}
               <Nav.Link onClick={directuser}>
-              <i className='bx bxs-user bx-sm'></i>
+              <i className='bx bxs-user bx-sm'> User</i>
               
               </Nav.Link>
               <Nav.Link as={Link} to={'/purchases'}>
-              <i className='bx bxs-shopping-bag-alt bx-sm'></i>
+              <i className='bx bxs-shopping-bag-alt bx-sm'> Purchases</i>
               </Nav.Link>
               <Car />
             </Nav>
