@@ -15,9 +15,11 @@ const SingUp = () => {
     
 
     const submit = (data) => {
-       
+       if(localStorage.getItem('token')=== undefined){
+        getConfig()
+       }
                
-        axios.post('https://e-commerce-api-v2.academlo.tech/api/v1/users', data, getConfig())
+        axios.post('https://e-commerce-api-v2.academlo.tech/api/v1/users', data)
             .then((res) =>{
                 navigate('/login');
 
